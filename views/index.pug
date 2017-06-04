@@ -1,0 +1,53 @@
+extends layout
+
+block content
+  h1 Wecome to the  Junkfood Handler
+  h4 Choose your craving
+  .procces_handler
+    .cookiebag
+      ul(class="cookiecontainer")
+        li(class="cookieflavor")
+          img(src="images/chocolatemix.png" id="choc")
+        li(class="cookieflavor")
+          img(src="images/outmeal.png" id="outm")
+        li(class="cookieflavor")
+          img(src="images/pistacho.png" id="pist")
+        li(class="cookieflavor")
+          img(src="images/rumraisin.png" id="rumr")
+        li(class="cookieflavor")
+          img(src="images/whitecream.png" id="cook")
+            
+    .bucketcontainer
+      img(src="images/paperbag.png" id="bagclosed")
+  .accountDetails
+    .cookiestag
+      ul(class="cookiecontainer")
+        li(class="cookieflavor")
+          img(src="images/chocolatemix.png")
+        li(class="cookieflavor")
+          img(src="images/outmeal.png")
+        li(class="cookieflavor")
+          img(src="images/pistacho.png")
+        li(class="cookieflavor")
+          img(src="images/rumraisin.png")
+        li(class="cookieflavor")
+          img(src="images/whitecream.png")
+        total Your total is 0
+        button(type="button",onclick="resetcookies()") resetbag
+    .totalsdisplay 
+        p(id= "chocflavor") 0
+        
+        p(id= "outmflavor") 0
+      
+        p(id= "pistflavor") 0
+        
+        p(id= "rumrflavor") 0
+        
+        p(id= "cookflavor") 0  
+        
+    
+  
+  script(src="https://code.jquery.com/jquery-1.12.4.js")
+  script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
+  script(src="javascripts/actions.js")
+  script(src="javascripts/cookie.js")

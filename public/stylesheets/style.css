@@ -1,0 +1,47 @@
+body {
+  padding: 50px;
+  font-family: 'Barrio', cursive, Arial,cursive;
+}
+h4{
+  text-align: center;
+}
+a {
+  color: #00B7FF;
+}
+.procces_handler{
+  display: flex;
+  justify-content:space-between;
+}
+.cookiecontainer li{
+  list-style: none;
+
+}
+.cookiecontainer img{
+  width: 40px;
+  height: 35px;
+  border-radius: 20px;
+  margin-left: 45px;
+}
+.procces_handler{
+  border-bottom-style: ridge;
+  color:black;
+}
+#bagclosed{
+  margin-top: 65px;
+  margin-right: 100px;
+  width: 60px;
+  height: 80px;
+}
+total{
+  border-top-style: ridge;
+  display: block;
+  border-color: black;
+  text-align: center;
+}
+.accountDetails{
+  display: flex;
+  justify-content:center;
+}
+.totalsdisplay{
+  margin-top:15px;
+}
