@@ -1,10 +1,13 @@
 
 var cookieNames = ['choc', 'outm', 'pist', 'rumr', 'cook'];
- Cookies.set(name, 0);
+
 window.onload=function(){
+
   cookieNames.forEach(function(name) {
     $(`#${name}`).draggable({snap:"#bagclosed"});
     let valor = Cookies.get(name);
+    if (!valor)
+      Cookies.set(name, 0);
     update(name,valor);
   });
 
