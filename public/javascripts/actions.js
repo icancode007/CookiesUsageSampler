@@ -1,10 +1,13 @@
-var cookieNames = ['choc', 'outm', 'pist', 'rumr', 'cook'];
 
+var cookieNames = ['choc', 'outm', 'pist', 'rumr', 'cook'];
+ Cookies.set(name, 0);
 window.onload=function(){
   cookieNames.forEach(function(name) {
-    Cookies.set(name, 0);
     $(`#${name}`).draggable({snap:"#bagclosed"});
+    let valor = Cookies.get(name);
+    update(name,valor);
   });
+
   //<---------- This Code is replaced with the function above ------------->
   // value = cookieNames.reduce(function(sum, name) {
   //   return(sum + Cookies.get(name));
@@ -39,7 +42,6 @@ function script(){
       $(this).attr('src','images/paperbagopen.png');
       //grab the id of the elment with the draggable attr
       var draggableId = ui.draggable.attr("id");
-      let currentval = 0;
       //show me who is actually falling in the snap
       console.log(draggableId);
 
@@ -51,14 +53,8 @@ function script(){
       Cookies.set(draggableId,value);
       //value of the current cookie plus 1
       console.log(value);
-      $(`#${draggableId}flavor`).text(value);
-      var totaldecuenta = ($(".totalsdisplay").find("p"));
-      for(let i = 0; i<5; i++){
-          console.log("here is the count check :" + parseInt(totaldecuenta[i].innerText));
-          currentval = currentval + parseInt(totaldecuenta[i].innerText);
-      }
-      console.log("here is the currentval: "+ currentval);
-      $('total').text(currentval);
+      update(draggableId,value);
+      
     }
   });
   $("#bagclosed").mouseenter(function(){
@@ -70,7 +66,17 @@ function script(){
 }
 
 $(document).ready(script);
-
+function update(cookieflavor,val){
+   $(`#${cookieflavor}flavor`).text(val);
+   let currentval = 0;
+   var totaldecuenta = ($(".totalsdisplay").find("p"));
+      for(let i = 0; i<5; i++){
+          console.log("here is the count check :" + parseInt(totaldecuenta[i].innerText));
+          currentval = currentval + parseInt(totaldecuenta[i].innerText);
+      }
+      console.log("here is the currentval: "+ currentval);
+      $('total').text(currentval);
+}
 function resetcookies(){
   cookieNames.forEach(function(name) {
   Cookies.set(name, 0);
